@@ -1,4 +1,4 @@
-package com.fuatkara.tests.day1;
+package com.fuatkara.tests.day1_Intro;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
