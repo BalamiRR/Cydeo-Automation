@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import java.util.concurrent.TimeUnit;
 
 public class T5_checkboxes {
-    public static void main(String[] args){
+    public static void main(String[] args) throws Exception{
 
         //1. Go to http://practice.cydeo.com/checkboxes
         WebDriver driver = WebDriverFactory.getDriver("chrome");
@@ -21,20 +21,24 @@ public class T5_checkboxes {
         WebElement checkbox1 = driver.findElement(By.xpath("//input[@name='checkbox1']"));
         //yukaridakiyle ayni
         //WebElement checkboxes1 = driver.findElement(By.xpath("//input[@id='box1']"));
-        WebElement checkbox2 = driver.findElement(By.xpath(""));
+        WebElement checkbox2 = driver.findElement(By.xpath("//input[@name='checkbox2']"));
 
         //2. Confirm checkbox #1 is NOT selected by default
+        //ilk baslangicta box secili degil
         System.out.println("checkbox1.isSelected(), expecting false = " + checkbox1.isSelected());
 
         //3. Confirm checkbox #2 is SELECTED by default.
+        //burda box secili
         System.out.println("checkbox2.isSelected(), expecting true = " + checkbox2.isSelected());
 
         //4. Click checkbox #1 to select it.
-//        Thread.sleep(2000);
+        //Tikladiktan sonra
+        Thread.sleep(2000);
         checkbox1.click();
 
         //5. Click checkbox #2 to deselect it.
-//        Thread.sleep(2000);
+        //Tikladiktan sonra
+        Thread.sleep(2000);
         checkbox2.click();
 
         //6. Confirm checkbox #1 is SELECTED.
