@@ -23,7 +23,6 @@ public class T3_RadioButton_cont {
     }
 
     private static void clickAndVerifyRadioButton(WebDriver driver, String nameAttribute, String idValue){
-
         //Locate name='sports' radio buttons and store them in a list of Web Element
         List<WebElement> radioButtons = driver.findElements(By.name(nameAttribute));
 
