@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class T5_Dropdown {
+public class T5_T6_Dropdown {
 
     public WebDriver driver;
 
@@ -47,7 +47,28 @@ public class T5_Dropdown {
         String actualOptCal = stateDropdown.getFirstSelectedOption().getText();
 
         Assert.assertEquals(actualOptCal,expectedOptCal);
-
         //Use all Select options. (visible text, value, index)
+    }
+
+    @Test
+    public void dropdown_t6(){
+        //TC #6: Selecting date on dropdown and verifying
+        //1. Open Chrome browser
+        //2. Go to https://practice.cydeo.com/dropdown
+        driver.get("https://practice.cydeo.com/dropdown");
+
+        //3. Select “December 1st, 1923” and verify it is selected.
+        Select dateDay = new Select(driver.findElement(By.xpath("//select[@id='day']")));
+        Select dateMonth = new Select(driver.findElement(By.xpath("//select=[@id='month']")));
+        Select dateYear = new Select(driver.findElement(By.xpath("//select=[@id='year']")));
+
+        //Select year using : visible text
+        dateYear.selectByVisibleText("1923");
+
+        //Select month using : value attribute
+        dateMonth.selectByValue("11");
+
+        //Select day using : index number
+        dateDay.selectByIndex(0);
     }
 }
