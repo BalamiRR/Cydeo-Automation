@@ -15,19 +15,19 @@ public class T5_T6_Dropdown {
     public WebDriver driver;
 
     @BeforeMethod
-    public void setupMethods(){
-        //1. Open Chrome browser
-        //2. Go to http://practice.cybertekschool.com/dropdown
-        WebDriver driver = WebDriverFactory.getDriver("chrome");
+    public void setupMethod(){
+        //2. Go to https://practice.cydeo.com/dropdown
+        driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("http://practice.cybertekschool.com/dropdown");
+        driver.get("https://practice.cydeo.com/dropdown");
     }
 
     @Test
-    public void dropdrown_t5() throws Exception{
-        //TC #5: Selecting state from State dropdown and verifying result
+    public void dropdown_task5() throws InterruptedException {
+        //TC #5: Selecting state from State dropdown and verifying result 1. Open Chrome browse
 
+        //we located the dropdown and it is ready to use
         Select stateDropdown = new Select(driver.findElement(By.xpath("//select[@id='state']")));
 
         //3. Select Illinois
@@ -43,32 +43,38 @@ public class T5_T6_Dropdown {
         stateDropdown.selectByIndex(5);
 
         //6. Verify final selected option is California.
-        String expectedOptCal = "California";
-        String actualOptCal = stateDropdown.getFirstSelectedOption().getText();
+        String expectedOptionText = "California";
+        String actualOptionText = stateDropdown.getFirstSelectedOption().getText();
 
-        Assert.assertEquals(actualOptCal,expectedOptCal);
-        //Use all Select options. (visible text, value, index)
+        Assert.assertEquals(actualOptionText, expectedOptionText);
     }
 
     @Test
     public void dropdown_t6(){
-        //TC #6: Selecting date on dropdown and verifying
-        //1. Open Chrome browser
-        //2. Go to https://practice.cydeo.com/dropdown
-        driver.get("https://practice.cydeo.com/dropdown");
-
         //3. Select “December 1st, 1923” and verify it is selected.
-        Select dateDay = new Select(driver.findElement(By.xpath("//select[@id='day']")));
-        Select dateMonth = new Select(driver.findElement(By.xpath("//select=[@id='month']")));
-        Select dateYear = new Select(driver.findElement(By.xpath("//select=[@id='year']")));
+        Select yearDropdown = new Select(driver.findElement(By.xpath("//select[@id='year']")));
+        Select monthDropdown = new Select(driver.findElement(By.xpath("//select[@id='month']")));
+        Select dayDropdown = new Select(driver.findElement(By.xpath("//select[@id='day']")));
 
         //Select year using : visible text
-        dateYear.selectByVisibleText("1923");
+        yearDropdown.selectByVisibleText("1923");
 
         //Select month using : value attribute
-        dateMonth.selectByValue("11");
+        monthDropdown.selectByValue("11");
 
         //Select day using : index number
-        dateDay.selectByIndex(0);
+        dayDropdown.selectByIndex(0);
+
+        String expectedYear = "1923";
+        String expectedMonth = "December";
+        String expectedDay = "1";
+
+        String actualYear = yearDropdown.getFirstSelectedOption().getText();
+        String actualMonth = monthDropdown.getFirstSelectedOption().getText();
+        String actualDay = dayDropdown.getFirstSelectedOption().getText();
+
+        Assert.assertTrue(actualYear.equals(expectedYear));
+        Assert.assertEquals(actualMonth, expectedMonth);
+        Assert.assertEquals(actualDay, expectedDay);
     }
 }
