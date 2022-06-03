@@ -71,6 +71,7 @@ public class T5_Windows_Practice {
         driver.switchTo().window(mainHandle);
     }
 
+
     @AfterMethod
     public void tearDown(){
         driver.close();
