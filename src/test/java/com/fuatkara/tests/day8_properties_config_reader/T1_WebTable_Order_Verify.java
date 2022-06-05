@@ -39,10 +39,14 @@ public class T1_WebTable_Order_Verify {
         //3. Verify Bob Martin's order date is as expected
         //12/31/2021
         WebElement bobMartinDateCell = driver.findElement(By.xpath("//table[@id='ctl00_MainContent_orderGrid']//td[.='Bob Martin']/following-sibling::td[3]"));
+
         String expectedBob = "12/31/2021";
         String actualBobDate = bobMartinDateCell.getText();
 
         Assert.assertEquals(actualBobDate, expectedBob);
     }
 
+
+
 }
+
