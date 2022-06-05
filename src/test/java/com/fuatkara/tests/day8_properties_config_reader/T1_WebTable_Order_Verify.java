@@ -1,6 +1,7 @@
 package com.fuatkara.tests.day8_properties_config_reader;
 
 import com.fuatkara.utilities.WebDriverFactory;
+import com.fuatkara.utilities.WebTableUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -26,7 +27,7 @@ public class T1_WebTable_Order_Verify {
     public void order_name_verify_test(){
         //Locate the cell that has Bob Martin text in it
         //WebElement bobMartinCell = driver.findElement(By.xpath("////table[@id='ctl00_MainContent_orderGrid']/tbody/tr[7]"));
-        WebElement bobMartinCell = driver.findElement(By.xpath("////table[@id='ctl00_MainContent_orderGrid']//td[.='Bob Martin']"));
+        WebElement bobMartinCell = driver.findElement(By.xpath("//table[@id='ctl00_MainContent_orderGrid']//td[.='Bob Martin']"));
 
         System.out.println("bobMartinCell.getText() = " + bobMartinCell.getText());
 
@@ -46,7 +47,20 @@ public class T1_WebTable_Order_Verify {
         Assert.assertEquals(actualBobDate, expectedBob);
     }
 
+    //We use the utility method we created
+    @Test
+    public void test2(){
+        String customerOrderDate1 = WebTableUtils.returnOrderDate(driver, "Alexandra Gray");
+        System.out.println("customerOrderDate1 = " + customerOrderDate1);
 
+        String customerOrderDate2 = WebTableUtils.returnOrderDate(driver, "John Doe");
+        System.out.println("customerOrderDate2 = " + customerOrderDate2);
+    }
+
+    @Test
+    public void test3(){
+        WebTableUtils.orderVerify(driver, "Bart Fisher", "01/16/2021");
+    }
 
 }
 
