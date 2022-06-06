@@ -1,5 +1,6 @@
 package com.fuatkara.tests.day8_properties_config_reader;
 
+import com.fuatkara.utilities.ConfigurationReader;
 import com.fuatkara.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -25,13 +26,16 @@ public class T4_Config_Practice {
 
     @Test
     public void google_search_test(){
+        WebElement clickBut = driver.findElement(By.xpath("//button[@id='L2AGLb']"));
+        clickBut.click(); // Google'da cookies aciliyor bu yuzden onu kabul etmek icin yazdim
+
         //3-Write "apple" in search box
         WebElement googleSearchBox = driver.findElement(By.xpath("//input[@name='q']"));
-        googleSearchBox.sendKeys("apple" + Keys.ENTER);
+        googleSearchBox.sendKeys(ConfigurationReader.getProperty("searchValue") + Keys.ENTER);
 
         //4-Verify title:
         //Expected : apple - Google Search
-        String expectedTitle = "apple - Google Search";
+        String expectedTitle = ConfigurationReader.getProperty("searchValue") + "apple - Recherche Search";
         String actualTitle = driver.getTitle();
 
         Assert.assertEquals(actualTitle, expectedTitle);
