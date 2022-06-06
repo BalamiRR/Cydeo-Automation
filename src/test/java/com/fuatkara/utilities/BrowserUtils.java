@@ -12,11 +12,11 @@ public class BrowserUtils {
     /* This method will accept int (in seconds) and execute Thread.sleep
     for given duration
     * */
-    public void sleep(int second){
-        second *= 1000;
-        try{
+    public static void sleeping(int second){
+        second *=1000;
+        try {
             Thread.sleep(second);
-        }catch(InterruptedException e){
+        }catch (InterruptedException e ) {
 
         }
     }
@@ -51,5 +51,6 @@ public class BrowserUtils {
     public static void verifyTitle(WebDriver driver, String expectedTitle){
         Assert.assertEquals(driver.getTitle(), expectedTitle);
     }
+
 
 }
