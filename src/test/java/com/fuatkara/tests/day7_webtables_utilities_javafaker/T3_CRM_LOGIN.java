@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 public class T3_CRM_LOGIN {
+
     public WebDriver driver;
 
     @BeforeMethod
@@ -19,6 +20,7 @@ public class T3_CRM_LOGIN {
         driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
     }
 
     @Test
