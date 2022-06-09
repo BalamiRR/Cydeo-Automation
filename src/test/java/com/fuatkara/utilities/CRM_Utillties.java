@@ -10,6 +10,21 @@ public class CRM_Utillties {
     user when it is called
     * */
 
+    public static void crm_login(WebDriver driver){
+        //3. Enter valid username
+        WebElement entUser = driver.findElement(By.xpath("//input[@name='USER_LOGIN']"));
+        entUser.sendKeys("helpdesk1@cybertekschool.com");
+
+        //4. Enter valid password
+        WebElement valPass = driver.findElement(By.xpath("//input[@name='USER_PASSWORD']"));
+        valPass.sendKeys("UserUser");
+
+        //5. Click to `Log In` button
+        //WebElement clickLogIn = driver.findElement(By.xpath("//input[@type='submit']"));
+        WebElement clickLogIn = driver.findElement(By.xpath("//input[@value='Log In']"));
+        clickLogIn.click();
+    }
+
     public static void crm_login(WebDriver driver, String username, String password){
         //3. Enter valid username
         WebElement entUser = driver.findElement(By.xpath("//input[@name='USER_LOGIN']"));
