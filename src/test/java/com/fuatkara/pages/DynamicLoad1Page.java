@@ -16,4 +16,16 @@ public class DynamicLoad1Page {
     
     @FindBy(css = "div#loading")         //<div id="loading" style="display : none;">
     public WebElement loadingBar;
+    
+    @FindBy(css = "#username")
+    public WebElement userName;
+
+    @FindBy(css = "#pwd")
+    public WebElement inputPassword;
+
+    @FindBy(xpath = "//button[.='Submit']")
+    public WebElement submitButton;
+
+    @FindBy(id = "flash")
+    public WebElement errorMessage;
 }

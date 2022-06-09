@@ -36,4 +36,5 @@ public class ActionPractices {
         Driver.getDriver().get("https://practice.cydeo.com/");
         Driver.closeDriver();
     }
+
 }
