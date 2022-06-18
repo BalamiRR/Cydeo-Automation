@@ -34,3 +34,4 @@ public class TestNG_Intro {
         System.out.println("TEST 2 is running");
     }
 }
+

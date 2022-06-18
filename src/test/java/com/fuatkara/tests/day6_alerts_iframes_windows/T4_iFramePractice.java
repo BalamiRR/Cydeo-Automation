@@ -24,7 +24,7 @@ public class T4_iFramePractice {
         //TC #1: Information alert practice
         //1. Open browser
         //2. Go to website: https://practice.cydeo.com/iframe
-        driver.get("https://practice.cydeo.com/iframe");
+            driver.get("https://practice.cydeo.com/iframe");
     }
 
     @Test
@@ -52,14 +52,6 @@ public class T4_iFramePractice {
         //assertion of header text is displayed or not
         Assert.assertTrue(headerText.isDisplayed());
 
-        //2. Create new test and make set ups
-
-
-        //3. Go to: https://practice.cydeo.com/iframe
-
-        //4. Assert: “Your content goes here.” Text is displayed.
-
-        //5. Assert: “An iFrame containing the TinyMCE WYSIWYG Editor”
     }
 
 }

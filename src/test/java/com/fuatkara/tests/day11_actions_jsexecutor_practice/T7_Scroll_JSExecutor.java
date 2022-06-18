@@ -31,8 +31,8 @@ public class T7_Scroll_JSExecutor {
         BrowserUtils.sleeping(2);
         js.executeScript("arguments[1].scrollIntoView(true)", cydeoLink, homeLink);
 
-
         //5- Use below provided JS method only
         //JavaScript method to use : arguments[0].scrollIntoView(true)
     }
 }
+

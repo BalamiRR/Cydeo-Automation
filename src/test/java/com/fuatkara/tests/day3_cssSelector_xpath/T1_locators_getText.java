@@ -6,10 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-
-//  son 46 dakika
-
-
 public class T1_locators_getText {
     public static void main(String[] args){
         //TC #1: NextBaseCRM, locators and getText() practice

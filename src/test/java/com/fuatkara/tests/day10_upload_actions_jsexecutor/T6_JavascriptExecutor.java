@@ -29,7 +29,6 @@ public class T6_JavascriptExecutor {
             BrowserUtils.sleeping(2);
             js.executeScript("window.scrollBy(0, -750)");
         }
-
         //JavaScript method to use : window.scrollBy(0,0)
     }
 }

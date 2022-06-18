@@ -33,6 +33,7 @@ public class H3 {
         }else{
             System.out.println("FALSE Title !");
         }
+
         //5- Go back to Google by using the .back();
         driver.navigate().back();
         //6- Verify title equals:

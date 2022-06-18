@@ -22,9 +22,9 @@ public class T3_Actions_Hover {
         WebElement img3 = Driver.getDriver().findElement(By.xpath("(//img)[3]"));
 
         //Locate all the "user" texts under here:
-        WebElement user1 = Driver.getDriver().findElement(By.xpath("//h5[text()='name: user1'"));
-        WebElement user2 = Driver.getDriver().findElement(By.xpath("//h5[text()='name: user2'"));
-        WebElement user3 = Driver.getDriver().findElement(By.xpath("//h5[text()='name: user3'"));
+        WebElement user1 = Driver.getDriver().findElement(By.xpath("//h5[text()='name: user1']"));
+        WebElement user2 = Driver.getDriver().findElement(By.xpath("//h5[text()='name: user2']"));// //h5[.='name: user1'] same thing with //h5[text()='name: user1']
+        WebElement user3 = Driver.getDriver().findElement(By.xpath("//h5[text()='name: user3']"));
 
         Actions actions = new Actions(Driver.getDriver());
 

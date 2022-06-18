@@ -19,7 +19,7 @@ public class T6_StaleElementReferenceException {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         //2- Go to: https://practice.cydeo.com/abtest
-        driver.get("https://practice.cydeo.com/abtest");
+            driver.get("https://practice.cydeo.com/abtest");
 
         //3- Locate “CYDEO” link, verify it is displayed.
         WebElement cydeoLink = driver.findElement(By.xpath("//a[.='CYDEO']"));

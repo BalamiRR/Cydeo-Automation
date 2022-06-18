@@ -31,7 +31,7 @@ public class T1_Alert_Practices {
     @Test
     public void alert_test1(){
         //3. Click to “Click for JS Alert” button
-        WebElement elemClickJSAlert = driver.findElement(By.xpath("//button[.='Click for JS Alert']")); //button[.='btn btn-primary'] degil cunku hepsi ayni
+        WebElement elemClickJSAlert = driver.findElement(By.xpath("//button[.='Click for JS Alert']"));
         elemClickJSAlert.click();
 
         //To able to click to Alert OK button we need to switch driver's focus to Alert itself

@@ -31,28 +31,26 @@ public class WebDriverWaitPractices {
 
         //4. Assert: Image is displayed.
         Assert.assertTrue(dynamicLoad7Page.squarePantImg.isDisplayed());
-
         //Note: Follow POM
     }
 
 
     @Test
     public void dynamic_load_1_test(){
-        //TC#5 : Dynamically Loaded Page Elements 1
         //1. Go to https://practice.cydeo.com/dynamic_loading/1
         Driver.getDriver().get("https://practice.cydeo.com/dynamic_loading/1");
 
         DynamicLoad1Page dynamicLoad1Page = new DynamicLoad1Page();
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
 
         //2. Click to start
-        dynamicLoad1Page.submitButton.click();
+        dynamicLoad1Page.startButton.click();
 
         //3. Wait until loading bar disappears
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
-        wait.until(ExpectedConditions.visibilityOf(dynamicLoad1Page.loadingBar));
+        wait.until(ExpectedConditions.invisibilityOf(dynamicLoad1Page.loadingBar));
 
         //4. Assert username inputbox is displayed
-        Assert.assertTrue(dynamicLoad1Page.inputPassword.isDisplayed());
+        Assert.assertTrue(dynamicLoad1Page.userName.isDisplayed());
 
         //5. Enter username: tomsmith
         dynamicLoad1Page.userName.sendKeys("tomsmith");

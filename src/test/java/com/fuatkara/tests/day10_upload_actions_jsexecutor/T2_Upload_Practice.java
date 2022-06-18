@@ -21,9 +21,9 @@ public class T2_Upload_Practice {
          */
         //3. Upload the file.
         WebElement fileUpload = Driver.getDriver().findElement(By.id("file-upload"));
+        fileUpload.sendKeys(path);
 
         //BrowserUtils.sleep(2);
-        fileUpload.sendKeys(path);
         WebElement uploadButton = Driver.getDriver().findElement(By.id("file-submit"));
         uploadButton.click();
 

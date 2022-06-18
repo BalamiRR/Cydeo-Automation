@@ -27,7 +27,6 @@ public class T5_T6_Dropdown {
     @Test
     public void dropdown_task5() throws InterruptedException {
         //TC #5: Selecting state from State dropdown and verifying result 1. Open Chrome browse
-
         //we located the dropdown and it is ready to use
         Select stateDropdown = new Select(driver.findElement(By.xpath("//select[@id='state']")));
 
