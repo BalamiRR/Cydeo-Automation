@@ -63,7 +63,13 @@ public class ExplicitWaitPractices {
         BrowserUtils.waitForInvisibilityOf(dynamicControlsPage.loadingBar);
 
         //5- Verify:
-        //a. Checkbox is not displayed
-        //b. “It’s gone!” message is displayed.
+        //a. Input box is enabled.
+        Assert.assertTrue(dynamicControlsPage.inputBox.isEnabled());
+
+        //b. “It’s enabled!” message is displayed.
+        Assert.assertTrue(dynamicControlsPage.inputBox.isDisplayed());
+
+        //Check the string value is matching as expected: It's enabled
+        Assert.assertTrue(dynamicControlsPage.message.getText().equals("It's enabled!"));
     }
 }
